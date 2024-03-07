@@ -34,6 +34,10 @@ the results in a split window.
 
     Just like |:Ag| but the pattern is from previous search.
 
+:AgFromDefaultYank [{directory}]                                *:AgFromSearch*
+
+    Just like |:Ag| but the pattern is from the unnamed register ".
+
 :LAg [options] {pattern} [{directory}]                                   *:LAg*
 
     Just like |:Ag| but instead of the |quickfix| list, matches are placed in

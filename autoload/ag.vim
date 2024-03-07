@@ -199,6 +199,13 @@ function! ag#AgFromSearch(cmd, args)
   call ag#Ag(a:cmd, '"' .  search .'" '. a:args)
 endfunction
 
+function! ag#AgFromDefaultYankRegister(cmd, args)
+  let search =  getreg('"')
+  " translate vim regular expression to perl regular expression.
+  let search = substitute(search,'\(\\<\|\\>\)','\\b','g')
+  call ag#Ag(a:cmd, '"' .  search .'" '. a:args)
+endfunction
+
 function! ag#GetDocLocations()
   let dp = ''
   for p in split(&runtimepath,',')
